@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(isset($_POST['btnHome']))
+    {
+        echo("123456789");
+        header("Location: index.php");
+    }
+?>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

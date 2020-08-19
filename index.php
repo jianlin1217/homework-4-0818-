@@ -14,7 +14,7 @@
     <td align="center" valign="baseline"><a href="login.php">登入</a> | <a href="secret.php">會員專用頁</a></td>
   </tr>
   <tr>
-    <td align="center" bgcolor="#CCCCCC">&nbsp;</td>
+    <td align="center" bgcolor="#CCCCCC">&nbsp;Hello!!</td>
   </tr>
 </table>
 
