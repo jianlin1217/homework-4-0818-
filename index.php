@@ -1,3 +1,30 @@
+<?php
+    $who = "Guest";
+    $_SESSION['loginUserName']=" Guest";
+    session_start();
+    if(isset($_GET['btnHome']))
+    {
+        echo("123456789");
+    }
+    //測試SESSION有沒有抓到值
+    if(isset($_SESSION['loginUserName']))
+    {
+        global $who;
+        $who = $_SESSION['loginUserName'];
+        // echo $who;
+    }
+    else
+    {
+        $who="Guest";
+    }
+    if(isset($_GET['btnOK']))
+    {
+
+        echo "456";
+        // header("location: index.php");
+    }
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +41,7 @@
     <td align="center" valign="baseline"><a href="login.php">登入</a> | <a href="secret.php">會員專用頁</a></td>
   </tr>
   <tr>
-    <td align="center" bgcolor="#CCCCCC">&nbsp;</td>
+    <td align="center" bgcolor="#CCCCCC">&nbsp;Hello!! <?=$who?></td>
   </tr>
 </table>
 
