@@ -41,7 +41,11 @@
     <td align="center" valign="baseline"><a href="login.php">登入</a> | <a href="secret.php">會員專用頁</a></td>
   </tr>
   <tr>
+<<<<<<< HEAD
     <td align="center" bgcolor="#CCCCCC">&nbsp;Hello!! <?=$who?></td>
+=======
+    <td align="center" bgcolor="#CCCCCC">&nbsp;Hello!!</td>
+>>>>>>> cf4451b5cdfad3c864a16d16c5762cab627382e7
   </tr>
 </table>
 

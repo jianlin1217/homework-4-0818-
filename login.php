@@ -5,6 +5,7 @@
         echo("123456789");
         header("Location: index.php");
     }
+<<<<<<< HEAD
     if(isset($_POST['btnOK']))
     {
         $uName=$_POST['txtUserName'];
@@ -12,6 +13,8 @@
         // echo $_SESSION['loginUserName'];
         header("location: index.php");
     }
+=======
+>>>>>>> cf4451b5cdfad3c864a16d16c5762cab627382e7
 ?>
 <html>
 <head>
