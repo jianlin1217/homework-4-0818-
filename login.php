@@ -11,6 +11,7 @@
         $_SESSION['loginUserName']=$uName;
         // echo $_SESSION['loginUserName'];
         header("location: index.php");
+        
     }
 ?>
 <html>

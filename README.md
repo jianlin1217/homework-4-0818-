@@ -5,11 +5,11 @@
 設定成ＭＶＣ架構(加分)
 
 
-1.加入hello 
+#1.加入hello 
 
-2.有guest 和登入者的切換
+#2.有guest 和登入者的切換
 
-3.創一個資料庫loginSys和兩筆資料，並確保可以連上資料庫
+#3.創一個資料庫loginSys和兩筆資料，並確保可以連上資料庫
 
 
 CREATE DATABASE loginSys DEFAULT CHARACTER SET UTF8;
@@ -28,3 +28,6 @@ insert into userInfo
 (uName,uPassword)
 VALUES
 ("Duo","Chungyo0818"),("Jian-lin","Chungyo0727");
+
+#4.從資料庫撈資料並存放到SESSION中
+
