@@ -3,7 +3,8 @@
 需要使用ＳＥＳＳＩＯＮ
 
 設定成ＭＶＣ架構(加分)
-
+# 測試帳號:Duo    Jian-lin
+# 測試密碼:Chungyo0818  Chungyo0727
 
 # 1.加入hello 
 
