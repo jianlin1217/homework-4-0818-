@@ -1,4 +1,8 @@
 <?php
+    //$_SESSION['memberPass']為資料庫中密碼
+    //$_SESSION['memberName']為資料庫中使用者名稱
+    //$_SESSION['loginUserName']存現在登入的使用者名稱
+    
     $who = "Guest";
     $loginState="登入";
     $_SESSION['loginUserName']=" Guest";

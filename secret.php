@@ -1,20 +1,25 @@
 <?php
-    require("connectdb.php");
+    session_start();
+    // require("connectdb.php");
     $syscomment="This page for member only.";
 
-    $UNames=array();
-    $setresult= mysqli_query($link,"set names UTF8");
-    $askName=<<<End
-    select uName from userinfo;
-    End;
-    $result= mysqli_query($link,$askName);
-    while($row=mysqli_fetch_assoc($result))
+    if($_SESSION['loginUserName']!="Guest")
     {
-        // var_dump($row);
-        array_push($UNames,$row['uName']);
-        // echo "$UNames <br>";
+      $syscomment="Hello!". $_SESSION['loginUserName']."<br> Welcome to member Setting";
     }
-    var_dump($UNames);
+    // $UNames=array();
+    // $setresult= mysqli_query($link,"set names UTF8");
+    // $askName=<<<End
+    // select uName from userinfo;
+    // End;
+    // $result= mysqli_query($link,$askName);
+    // while($row=mysqli_fetch_assoc($result))
+    // {
+    //     // var_dump($row);
+    //     array_push($UNames,$row['uName']);
+    //     // echo "$UNames <br>";
+    // }
+    // var_dump($UNames);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

@@ -1,16 +1,53 @@
 <?php
     session_start();
+    require("connectdb.php");
+    $syscomment="This page for member only.";
+    $identifyName= array();
+    $identifyPass= array();
+
+    $_SESSION['memberPass']=array();        
+    $_SESSION['memberName']=array();
+    $setresult= mysqli_query($link,"set names UTF8");
+    $askName=<<<End
+    select * from userinfo;
+    End;
+    $result= mysqli_query($link,$askName);
+    
     if(isset($_POST['btnHome']))
     {
         echo("123456789");
         header("Location: index.php");
     }
+    //將使用者名稱以及密碼存放到SESSION當中
+    while($row=mysqli_fetch_assoc($result))
+    {
+      array_push($_SESSION['memberPass'],$row['uPassword']);
+      array_push($_SESSION['memberName'],$row['uName']);
+    }
+    $identifyPass=($_SESSION['memberPass']);
+    $identifyName=($_SESSION['memberName']);
+    //以下註解測試名稱密碼是否正確讀取
+    // for($j=0;$j<count($identifyName);$j++)
+    // {
+    //   echo "$identifyName[$j] + $identifyPass[$j]";
+    // }
+
+    //接收使用者輸入的值並且判斷是不是會員
     if(isset($_POST['btnOK']))
     {
         $uName=$_POST['txtUserName'];
-        $_SESSION['loginUserName']=$uName;
-        // echo $_SESSION['loginUserName'];
-        header("location: index.php");
+        $uPass=$_POST['txtPassword'];
+
+       for($i=0;$i<count($identifyName);$i++)
+       {
+         if(($uName==$identifyName[$i])&&($uPass==$identifyPass{$i}))
+         {
+            // echo $_SESSION['loginUserName'];
+            $_SESSION['loginUserName']=$uName;
+            header("location: index.php");
+         }
+       }
+      echo "抱歉!您輸入可能有誤或還沒成為我們的會員!";
         
     }
 ?>
