@@ -35,6 +35,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Lab - index</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -43,13 +44,28 @@
     <td align="center" bgcolor="#CCCCCC"><font color="#FFFFFF">會員系統 - 首頁</font></td>
   </tr>
   <tr>
-    <td align="center" valign="baseline"><a href=<?=$goWeb?>><?=$loginState?></a> | <a href="secret.php">會員專用頁</a></td>
+    <td align="center" valign="baseline"><a id="loginInOut" href=<?=$goWeb?>><?=$loginState?></a> | <a href="secret.php">會員專用頁</a></td>
   </tr>
   <tr>
     <td align="center" bgcolor="#CCCCCC">&nbsp;Hello!! <?=$who?></td>
   </tr>
 </table>
 
+<script>
+    $("#loginInOut").on("click",function(){
+      // alert("!!!!");
+        if(<?php echo  $who;?>!="Guest")
+        {
+          
+          alert("登出");
+          
+        }
+        else
+        {
 
+        }
+
+    });
+</script>
 </body>
 </html>
