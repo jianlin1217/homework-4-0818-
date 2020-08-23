@@ -2,11 +2,12 @@
     //$_SESSION['memberPass']為資料庫中密碼
     //$_SESSION['memberName']為資料庫中使用者名稱
     //$_SESSION['loginUserName']存現在登入的使用者名稱
-    
-    $who = "Guest";
-    $loginState="登入";
-    $_SESSION['loginUserName']=" Guest";
     session_start();
+    $who = "Guest";
+    $goWeb= "login.php";
+    $loginState="登入";
+    // $_SESSION['loginUserName']="Guest";
+    
     if(isset($_GET['btnHome']))
     {
         echo("123456789");
@@ -16,6 +17,7 @@
     {
         global $who;
         $who = $_SESSION['loginUserName'];
+        // echo  $_SESSION['loginUserName']."1234";
         $loginState="登出";
         // echo $who;
         // echo "123 + ".$_SESSION['loginUserName'];
@@ -25,13 +27,7 @@
         // echo "1230";
         $who="Guest";
     }
-    if(isset($_GET['btnOK']))
-    {
-        
-        // header("location: index.php");
-    }
 
-    if(isset($_POST['']))
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,7 +43,7 @@
     <td align="center" bgcolor="#CCCCCC"><font color="#FFFFFF">會員系統 - 首頁</font></td>
   </tr>
   <tr>
-    <td align="center" valign="baseline"><a href="login.php"><?=$loginState?></a> | <a href="secret.php">會員專用頁</a></td>
+    <td align="center" valign="baseline"><a href=<?=$goWeb?>><?=$loginState?></a> | <a href="secret.php">會員專用頁</a></td>
   </tr>
   <tr>
     <td align="center" bgcolor="#CCCCCC">&nbsp;Hello!! <?=$who?></td>

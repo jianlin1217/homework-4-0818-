@@ -42,9 +42,10 @@
        {
          if(($uName==$identifyName[$i])&&($uPass==$identifyPass{$i}))
          {
-            // echo $_SESSION['loginUserName'];
+            
             $_SESSION['loginUserName']=$uName;
-            header("location: index.php");
+            echo $_SESSION['loginUserName'];
+            header("location: secret.php");
          }
        }
       echo "抱歉!您輸入可能有誤或還沒成為我們的會員!";
